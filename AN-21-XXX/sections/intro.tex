@@ -23,34 +23,207 @@ This document outlines the studies performed to commission the trigger
 logic, using data recorded early in 2022, and to determine the physics
 performance of the trigger.
 
-\clearpage
-\section{Data samples and simulation}
+\subsection{Key commissioning tasks}
+
+We list below a list of key tasks related to the commissioning the
+di-electron trigger logic, the menu strategy, the use of control
+triggers, and the physics performance.
+
+Several tasks (\eg trigger rate, timing, purity measurement) are
+crucial from the perspective of demonstrating the efficient use of CMS
+resources, as well as providing guidance on potential interventions
+during 2022 and on how to improve the trigger performance for 2023 and
+beyond. A subset of the tasks will help to quantify the physics
+performance: a study of the trigger efficiency turn-on as a function
+of kinematical variables relevant to the analysis, and the subsequent
+determination of data/MC scale factors; and an estimate of the number
+of candidates recorded at low \qsq using early data. The latter task
+will permit a crosscheck of the per-path signal \axe estimates
+provided by the di-electron trigger proposal~\cite{AN-21-160}, which
+in turn will help to solidify the end-of-year estimates provided
+therein.
+
+The outcome of all commissioning studies and any required
+actions/interventtions should be reported to the BPH trigger working
+group and TSG.
+
+\subsubsection{Trigger rates} 
+
+\begin{itemize}
+\item This concerns the determination of the di-electron trigger rate
+  at both the L1 and HLT.
+\item Rates should be measured and monitored from the first instance
+  of the di-electron trigger being included in the menu. Estimates of
+  the L1 rate behaviour for the CMS menu as a whole have large
+  uncertainties. Prompt intervention may be required to regulate rates
+  within the available L1 budget. This is especially important for the
+  di-electron trigger during early operations, as the L1 rate will be
+  tens of kHz given that the stategy is to utilise all available spare
+  capacity at low values of \linst.
+\item Rates should be monitored for each of the ${\sim}10$ L1 seeds
+  and HLT paths. Each HLT path is seeded by the logical OR of all
+  available L1 seeds to provide maximum flexibility in controlling
+  rate while maximising signal \axe. The L1 seeds and HLT paths are
+  pairwise selected by unity prescale values; all other pairs are
+  effectively removed from the menu by selecting zero prescale
+  values. 
+\item In the case of anomalous rate beahviour, backup paths should be
+  selected according to a predefined strategy, as outlined in
+  Sec.~\ref{}.
+\item The rate dependence on pileup should be determined per L1 seed
+  and HLT path.
+\end{itemize}
+
+\subsubsection{CPU timing studies for the HLT}
+
+\begin{itemize}
+\item 
+\end{itemize}
+
+This concerns studies to evaluate the
+
+\subsubsection{Measure trigger efficiencies}
+
+\begin{itemize}
+\item 
+\end{itemize}
+
+Mainly "service work for CMS" and to satisfy TSG. Can provide turn ons
+using (up to) three control triggers (as discussed). Lots of paths to
+study, which is a pain. The most relevant aspects for the analysis is
+ensuring we understand the turn-on if operating there, and determining
+data/MC scale factors. The di-electron trigger has no displacement
+requirement and so we won't suffer from a slow turn-on (vs dxy) like
+the 2018 muon trigger. Main kine vars are pT and eta, although we have
+a deltaR req at L1 and di-electron mass req at HLT. Perhaps mass
+resolution might be poor, but we cut at 6\GeV. Surely loose enough to
+cover full \qsq range, but check for slow turn-on at high \qsq? We
+already know (muon) trigger eff has little effect on RK and is a
+subdominant syst, but is this also valid for di-electron? We'll start
+with SingleMuon control trigger. We'll analyse 2018 BParking data set
+to have prelim estimates before 2022 data taking.
+
+\subsubsection{Measure trigger purity}
+
+\begin{itemize}
+\item 
+\end{itemize}
+
+Mainly "service work for CMS" and to satisfy TSG. Extract signal
+counts on J/psi peak and use MC to unfold Acc x Eff x BF, and compare
+counts to number of di-ele triggers fired. Mainly for TSG.
+
+\subsubsection{Validation of physics performance}
+
+
+
+\begin{itemize}
+\item 
+\end{itemize}
+
+The projections for number of expected candidates at low \qsq. As
+determined in Ref.~\cite{AN-21-160}. We need to extract signal counts
+on J/psi peak and extrapolate to low q2 using MC. Perfect for Jay. I
+will help.
 
 \clearpage
-\section{Logic}
+\subsection{Control trigger for efficiency measurements}
 
-\subsection{Integration}
+\subsubsection{Single muon}
 
-JIRA tickets.
+\begin{align}
+  N^{\text{produced}} & = \lint \times \sigma_{\bbbar} \times
+  f_{b_{1}} \times f_{b_{2}} \times \mathcal{B}[b_1{\to}{\mu}X] \times
+  \mathcal{B}[b_2{\to}{J}{/}{\psi}({\to}ee)X] \times 2 &
+  \label{equ:mu-produced}
+  \\[0.5ex]
+  N^{\text{recorded}} & = N^{\text{produced}} \times
+  {\acc}[b_1{\to}{\mu}X] \times \effvar{trigger}_{b_1{\to}{\mu}X} &
+  \text{"tag-side"}
+  \label{equ:mu-recorded}
+  \\[0.5ex]
+  N^{\text{tag}} & = N^{\text{recorded}} \times
+  \effvar{analysis}_{b_1{\to}{\mu}X} & \text{"tag-side"}
+  \label{equ:mu-tag}
+  \\[0.5ex]
+  N^{\text{signal}} & = N^{\text{tag}} \times
+  {\acc}[b_2{\to}{J}{/}{\psi}({\to}ee)X] \times
+  \effvar{analysis}_{b_2{\to}{J}{/}{\psi}({\to}ee)X} &
+  \text{"signal-side"}
+  \label{equ:mu-signal}
+\end{align}
 
+\begin{table}[!th]
+  \centering
+  \caption{}
+  \label{tab:mu-production}
+  \footnotesize
+  \def\arraystretch{1.2}
+  \newcommand{\trigaxe}{\ensuremath{{\acc}[b_1{\to}{\mu}X] \times \effvar{trigger}_{b_1{\to}{\mu}X}}\xspace}
+  \begin{tabular}{lll}
+    \hline
+                                           & Variable                                         & Value               \\
+    \hline
+    \multicolumn{3}{l}{\it Production:}                                                                             \\
+    Integrated luminosity                  & \lint                                            & 1.0\fbinv           \\
+    \bbbar cross section (13\TeV)          & $\sigma_{\bbbar}$
+                                           & $\sci{4.7}{11}$~fb                                                     \\ 
+    Fragmentation fractions                & $f_{b_1}, f_{b_2}$                                   & 1.0 \\
+    Branching fraction (tag-side)          & $\mathcal{B}[b_1^\pm{\to}{\mu}X]$                & 0.2                 \\
+    Branching fraction (signal-side)       & $\mathcal{B}[b_2{\to}{J}{/}{\psi}\,X]$               & 0.01                \\
+    Branching fraction (signal-side)       & $\mathcal{B}[{J}{/}{\psi}{\to}ee]$                   & 0.06                \\
+    \multicolumn{3}{l}{\it Tag-side:}                                                                               \\
+    Trigger (\texttt{HLT\_Mu9\_IP6})       & \trigaxe                                         & $\sci{1.25}{-3}$    \\
+    Selection of ${\mu}X$ events           & $\effvar{analysis}_{b_1{\to}{\mu}X}$             & 0.8 (?)             \\ 
+    \multicolumn{3}{l}{\it Signal-side analysis:}                                                                   \\
+    Acceptance ($\pt > 2\GeV, |\eta|<1.2$) & ${\acc}[b_2{\to}{J}{/}{\psi}({\to}ee)X]$             & 0.7 (?)             \\
+    Selection of $eeX$ events              & $\effvar{analysis}_{b_2{\to}{J}{/}{\psi}({\to}ee)X}$ & 0.02 (?)            \\ 
+    \hline
+  \end{tabular}
+\end{table}
 
-\subsection{Menu}
+Given the values in Table~\ref{tab:mu-production}, and assuming that
+we consider inclusively the decays from all b hadrons (\eg $B^\pm$,
+$B^0$, $B_{\text{c}}$, $\Lambda_{\text{b}}$, \dots) such that $f_b =
+1.0$, then the number of \bbbar events produced at the LHC that decay
+to $b_1^\pm{\to}{\mu}X, b_2{\to}{J}{/}{\psi}({\to}ee)X$ is determined
+to be $N^{\text{produced}} = \sci{1.1}{8}$ per \fbinv. The number of
+$b{\to}{\mu}X$ decays that are recorded by the trigger is determined
+to be $N^{\text{recorded}} = \sci{1.4}{5}$ per \fbinv. The number of
+$b{\to}{\mu}X$ decays that are reconstructed offline is determined to
+be $N^{\text{tag}} = \sci{1.1}{5}$ per \fbinv. The number of
+signal-side $eeX$ events that are reconstructed offline is determined
+to be $N^{\text{signal}} = 1600$ per \fbinv.
 
-
-\clearpage
-\section{Commissioning}
-
-
-\subsection{Emulation}
-
-\subsection{Early data}
-
-
-\clearpage
-\section{Performance}
-
-
-
-\clearpage
-\section{Summary}
+\begin{table}[!th]
+  \centering
+  \caption{Estimated \bkee candidates accumulated for an assumed rate
+    allocation of 3.5~kHz for the di-electron trigger, for different rate
+    allocations {\it for the single muon trigger}, and as a function of
+    luminosity profiles that are representative of how the LHC
+    performance might evolve during 2022. } 
+  \label{tab:estimates-with-single-mu}
+  \footnotesize
+  \begin{tabular}{ccccccccc}
+    \hline
+    Peak \linst & \lint (per fill) & $N_{\textrm{fill}}$ & \lint ($N$ fills) & \multicolumn{4}{c}{Candidates (per allocation)} \\
+    \cline{5-9}
+    $[10^{34}\invcmsqs]$ & [$\fbinv$] &  & [$\fbinv$] & 0~kHz & 5~kHz & 10~kHz & 15~kHz & 18.3~kHz \\
+    \hline
+    \multicolumn{4}{l}{\it Intensity ramp-up:} \\
+    0.24 & 0.09 & 3  & 0.28 & 9.5   &   9.5 &   9.5 &   9.5 &   9.5 \\
+    0.47 & 0.18 & 3  & 0.54 & 23.7  &  15.9 &  15.9 &  15.9 &  15.9 \\
+    0.70 & 0.27 & 3  & 0.81 & 15.9  &  22.6 &  22.6 &  22.6 &  22.6 \\
+    \multicolumn{4}{l}{\it pp collisions for physics:} \\
+    0.9  & 0.35 & 12 & 4.17 & 102.1 & 101.0 & 101.0 &  87.9 &  87.9 \\
+    1.1  & 0.42 & 12 & 5.10 & 105.0 & 104.8 & 104.8 & 100.7 &  88.5 \\
+    1.3  & 0.50 & 12 & 6.02 & 105.8 & 105.8 & 105.8 &  85.4 &  82.1 \\
+    1.5  & 0.58 & 12 & 6.95 & 96.5  &  96.5 &  89.6 &  85.3 &  62.5 \\
+    1.7  & 0.66 & 12 & 7.88 & 73.8  &  73.8 &  64.6 &  48.8 &  37.4 \\
+    2.0  & 0.78 & 12 & 9.36 & 39.1  &  39.1 &  35.7 &  32.9 &  26.8 \\
+    \multicolumn{4}{l}{\it Totals:} \\
+    -    & -    & 81 & 41.1 & 571.3 & 568.9 & 549.5 & 489.1 & 433.2 \\
+    \hline
+  \end{tabular}
+\end{table}
 
