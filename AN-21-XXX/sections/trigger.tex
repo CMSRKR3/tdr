@@ -1,0 +1,128 @@
+\clearpage
+\section{Trigger performance}
+\label{sec:trigger}
+
+\subsection{Introduction}
+
+\fixme{AUTHOR?}
+
+%Can provide turn ons using (up to) three control triggers (as
+%discussed). Multiple paths, which complicates matters. The most
+%important aspect for the analysis is to ensure we understand the
+%turn-on if operating there, and determining data/MC scale factors. The
+%di-electron trigger has no displacement requirement and so we won't
+%suffer from a slow turn-on (vs dxy) like the 2018 muon trigger. Main
+%kine vars are pT and eta, although we have a deltaR req at L1 and
+%di-electron mass req at HLT (upper bound of 6\GeV). We already know
+%(muon) trigger eff has little effect on RK(mu) and is a subdominant
+%syst, but is this also valid for di-electron?
+
+\subsection{Identifying triggers used to record data}
+
+\fixme{Rob, Jay?}
+
+\fixme{TriggerLuminosity package. Path and lumi table. Etc}
+
+\subsection{Efficiency studies using a tag-side single-muon control trigger}
+
+\fixme{AUTHOR?}
+
+\fixme{Control trigger logic. Data sample. Offline
+  selection. Method. Results. Etc}
+
+%  BELOW IS LIKELY OUT OF DATE GIVEN CHANGES TO PT AND ETA THRESHOLDS AND PRESCALES
+%\begin{align}
+%  N^{\text{produced}} & = \lint \times \sigma_{\bbbar} \times
+%  f_{b_{1}} \times f_{b_{2}} \times \mathcal{B}[b_1{\to}{\mu}X] \times
+%  \mathcal{B}[b_2{\to}{J}{/}{\psi}({\to}ee)X] \times 2 &
+%  \label{equ:mu-produced}
+%  \\[0.5ex]
+%  N^{\text{recorded}} & = N^{\text{produced}} \times
+%  {\acc}[b_1{\to}{\mu}X] \times \effvar{trigger}_{b_1{\to}{\mu}X} &
+%  \text{"tag-side"}
+%  \label{equ:mu-recorded}
+%  \\[0.5ex]
+%  N^{\text{tag}} & = N^{\text{recorded}} \times
+%  \effvar{analysis}_{b_1{\to}{\mu}X} & \text{"tag-side"}
+%  \label{equ:mu-tag}
+%  \\[0.5ex]
+%  N^{\text{signal}} & = N^{\text{tag}} \times
+%  {\acc}[b_2{\to}{J}{/}{\psi}({\to}ee)X] \times
+%  \effvar{analysis}_{b_2{\to}{J}{/}{\psi}({\to}ee)X} &
+%  \text{"signal-side"}
+%  \label{equ:mu-signal}
+%\end{align}
+%
+%\begin{table}[!th]
+%  \centering
+%  \caption{}
+%  \label{tab:mu-production}
+%  \footnotesize
+%  \def\arraystretch{1.2}
+%  \newcommand{\trigaxe}{\ensuremath{{\acc}[b_1{\to}{\mu}X] \times \effvar{trigger}_{b_1{\to}{\mu}X}}\xspace}
+%  \begin{tabular}{lll}
+%    \hline
+%                                           & Variable                                         & Value               \\
+%    \hline
+%    \multicolumn{3}{l}{\it Production:}                                                                             \\
+%    Integrated luminosity                  & \lint                                            & 1.0\fbinv           \\
+%    \bbbar cross section (13\TeV)          & $\sigma_{\bbbar}$
+%                                           & $\sci{4.7}{11}$~fb                                                     \\ 
+%    Fragmentation fractions                & $f_{b_1}, f_{b_2}$                                   & 1.0 \\
+%    Branching fraction (tag-side)          & $\mathcal{B}[b_1^\pm{\to}{\mu}X]$                & 0.2                 \\
+%    Branching fraction (signal-side)       & $\mathcal{B}[b_2{\to}{J}{/}{\psi}\,X]$               & 0.01                \\
+%    Branching fraction (signal-side)       & $\mathcal{B}[{J}{/}{\psi}{\to}ee]$                   & 0.06                \\
+%    \multicolumn{3}{l}{\it Tag-side:}                                                                               \\
+%    Trigger (\texttt{HLT\_Mu9\_IP6})       & \trigaxe                                         & $\sci{1.25}{-3}$    \\
+%    Selection of ${\mu}X$ events           & $\effvar{analysis}_{b_1{\to}{\mu}X}$             & 0.8 (?)             \\ 
+%    \multicolumn{3}{l}{\it Signal-side analysis:}                                                                   \\
+%    Acceptance ($\pt > 2\GeV, |\eta|<1.2$) & ${\acc}[b_2{\to}{J}{/}{\psi}({\to}ee)X]$             & 0.7 (?)             \\
+%    Selection of $eeX$ events              & $\effvar{analysis}_{b_2{\to}{J}{/}{\psi}({\to}ee)X}$ & 0.02 (?)            \\ 
+%    \hline
+%  \end{tabular}
+%\end{table}
+%
+%Given the values in Table~\ref{tab:mu-production}, and assuming that
+%we consider inclusively the decays from all b hadrons (\eg $B^\pm$,
+%$B^0$, $B_{\text{c}}$, $\Lambda_{\text{b}}$, \dots) such that $f_b =
+%1.0$, then the number of \bbbar events produced at the LHC that decay
+%to $b_1^\pm{\to}{\mu}X, b_2{\to}{J}{/}{\psi}({\to}ee)X$ is determined
+%to be $N^{\text{produced}} = \sci{1.1}{8}$ per \fbinv. The number of
+%$b{\to}{\mu}X$ decays that are recorded by the trigger is determined
+%to be $N^{\text{recorded}} = \sci{1.4}{5}$ per \fbinv. The number of
+%$b{\to}{\mu}X$ decays that are reconstructed offline is determined to
+%be $N^{\text{tag}} = \sci{1.1}{5}$ per \fbinv. The number of
+%signal-side $eeX$ events that are reconstructed offline is determined
+%to be $N^{\text{signal}} = 1600$ per \fbinv.
+
+\subsection{Efficiency studies using tag-side di-muon control triggers}
+
+\fixme{Noah, GK?}
+
+\fixme{Control trigger logic. Data sample. Offline
+  selection. Method. Results. Etc}
+
+\subsection{Efficiency studies using single-electron control triggers}
+
+\fixme{Claudio, Chiara?}
+
+\fixme{Control trigger logic. Data sample. Offline
+  selection. Method. Results. Etc}
+
+\subsection{Final trigger efficiency scale factors}
+
+\fixme{AUTHOR?}
+
+\fixme{Should cover consistency checks between results from the
+  different control triggers. Final scale factors and related
+  systematics.}
+
+\subsection{Trigger purity}
+
+\fixme{AUTHOR?}
+
+\fixme{Do we try to estimate the trigger purity? Definition of purity?
+  Fraction of triggered events that record $b\bar{b}$ with at least
+  one b hadron decay to the $eeX$ final state? e.g. Extract signal
+  counts on J/psi peak and use MC to unfold Acc x Eff x BF, and
+  compare counts to number of di-ele triggers fired?}

@@ -1,4 +1,3 @@
 export TDR_TMP_DIR=./tmp
-../utils/tdr --style=an b
-#../utils/tdr --style=an --nodraft b
-
+#../AN-21-160/utils/tdr --style=an b
+../utils/tdr --style=an --nodraft b

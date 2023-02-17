@@ -1,89 +1,63 @@
-%%%%%%%%%%%%% local definitions %%%%%%%%%%%%%%%%%%%%%
-
 %\setcounter{section}{-1} % Start from Section 0
 \input{mycommands}
 
-%%%%%%%%%%%%%%%  Title page %%%%%%%%%%%%%%%%%%%%%%%%
 \cmsNoteHeader{AN-21-XXX}
-% >> Title: please make sure that the non-TeX equivalent is in
-% PDFTitle below for papers. For PASs, PDFTitle can be used with plain
-% TeX.
 \title{Performance of the inclusive di-electron trigger}
 
-% >> Authors Author is always "The CMS Collaboration" for PAS and
-% papers, so author, etc, below will be ignored in those cases For
-% multiple affiliations, create an address entry for the combination
-% To mark authors as primary, use the \author* form
-
 \author[another]{A. N. Other}
-%\author[icl]{Robert Bainbridge}
-%\author[icl]{Jay Odedra}
-%\author[zurich]{Yuta Takahashi}
-%\author[brown]{Xuli (Sebastian) Yan}
-
 \address[another]{Another Institute}
+
+%\author[icl]{R.~Bainbridge}
+%\author[colorado]{G.~Karathanasis}
+%%\author[brown]{G.~Landsberg}
+%\author[icl]{J.~Odedra}
+%\author[rome]{C.~Quaranta}
+%\author[rome]{C.~Rovelli}
+%%\author[athens]{P.~Sphicas}
+%%\author[colorado]{K.~Ulmer}
+%\author[brown]{X.~Yan}
+%\author[colorado]{N.~Zipper}
 %\address[icl]{Imperial College London}
-%\address[zurich]{University of Z\"urich}
+%\address[colorado]{University of Colorado}
+%\address[rome]{INFN Rome}
+%\address[brown]{Brown University}
 
 \date{\today}
 
-% >> Abstract Abstract processing: 1. **DO NOT use \include or
-% \input** to include the abstract: our abstract extractor will not
-% search through other files than this one.  2. **DO NOT
-% use %** to comment out sections of the abstract: the extractor will
-% still grab those lines (and they won't be comments any longer!).
-% 3. For PASs: **DO NOT use CMS tex macros.**...in the abstract: CDS
-% MathJax processor used on the abstract doesn't understand them _and_
-% will only look within $$. The abstracts for papers are hand
-% formatted so macros are okay.
 \abstract{}
 
-% >> PDF Metadata Do not comment out the following hypersetup lines
-% (metadata). They will disappear in NODRAFT mode and are needed by
-% CDS.  Also: make sure that the values of the metadata items are
-% sensible and are in plain text with the possible exception of the
-% PDFtitle for a PAS. Then you can use pure TeX symbols as if on a
-% typewriter. Examples: $\sqrt{s}=13\TeV$ => $sqrt{s}=$ 13 TeV;
-% 32\fbinv => 32 fb$^{-1}$ No unescaped comment % characters.
-% No curly braces {} except for TeX in the PDFtitle.
 \hypersetup{%
-pdfauthor={Robert Bainbridge, Jay Odedra},% 
-pdftitle={Performance of the inclusive di-electron trigger},%
-pdfsubject={CMS},%
-pdfkeywords={CMS}} % limit six total
+  pdfauthor={A.N.Other},%
+  pdftitle={Performance of the inclusive di-electron trigger},%
+  pdfsubject={CMS},%
+  pdfkeywords={CMS}
+}
 
-\maketitle %maketitle comes after all the front information has been supplied
+\maketitle
 \setcounter{tocdepth}{2}
 \tableofcontents 
 
 \input{sections/intro}
-\input{sections/menu}
-
-\clearpage
-\section{Data samples and simulation}
-\clearpage
-\section{Commissioning}
-\subsection{Trigger rates at L1 and HLT}
-\subsection{CPU timing studies at HLT}
-\clearpage
-\section{Performance}
-\subsection{Trigger efficiency turn-on}
-\subsection{Trigger purity}
-\subsection{Signal \texorpdfstring{\axe}{AxE} at low \texorpdfstring{\qsq}{q2}}
-\clearpage
-\section{Emulated logic and performance}
-\clearpage
-\section{Summary}
+%\input{sections/tasks}
+\input{sections/samples}
+\input{sections/operations}
+\input{sections/trigger}
+\input{sections/physics}
+\input{sections/developments}
+\input{sections/summary}
 
 \newpage
 \begin{acknowledgments}
-% RK analyzers? 
+  A.N.Other.
+  % Sam Harper???!!!
 \end{acknowledgments}
 
 \newpage
 \bibliography{AN-21-XXX}
 
-%\appendix
-%\numberwithin{figure}{section}
-%\numberwithin{table}{section}
+\appendix
+\numberwithin{figure}{section}
+\numberwithin{table}{section}
+\clearpage
+\section{Appendix}
 %\input{sections/appendix}
