@@ -3,7 +3,7 @@
 ## Checkout and build
 
 ```
-git clone git@github.com:CMSRKR3/tdr.git notes
+git clone git@github.com:DiElectronX/tdr.git notes
 cd notes
 git submodule init
 git submodule update
