@@ -17,7 +17,7 @@ Just for reference, to be done once only on the creation of this repo.
 
 ```
 # https://git-scm.com/book/en/v2/Git-Tools-Submodules
-git clone git@github.com:CMSRKR3/tdr.git notes
+git clone git@github.com:DiElectronX/tdr.git notes
 cd notes
 git submodule add ssh://git@gitlab.cern.ch:7999/tdr/utils.git
 git diff --cached --submodule
